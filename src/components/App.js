@@ -6,6 +6,8 @@ import NavBar from "./views/NavBar/NavBar"
 import LandingPage from "./views/LandingPage/LandingPage.js"
 import UploadPage from "./views/UploadPage/UploadPage"
 import Footer from "./views/Footer/Footer"
+import AllServicePage from "./views/ServicesPage/AllServicePage"
+import Feedback from './views/Feedback/Feedback'
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -20,7 +22,9 @@ function App() {
           <br/>
           <br/>
           <Route exact path="/" component={ LandingPage } />
-          <Route exact path="/uploads" component={ UploadPage } />
+          <Route exact path="/upload" component={ UploadPage } />
+          <Route exact path="/all" component={ AllServicePage } />
+          <Route exact path="/feedback" component={ Feedback } />
       </div>
         </Router>
       <Footer />

@@ -18,6 +18,7 @@ function NavBar() {
       <div className="menu__logo">
         <Link to="/">Logo</Link>
       </div>
+
   
       <div className="menu__container">
         <Drawer
@@ -31,6 +32,9 @@ function NavBar() {
           <LeftMenu mode="inline" />
           <RightMenu mode="inline" />
         </Drawer>
+      <Link to="/upload">Upload</Link>
+      <Link to="/all">Get All services</Link>
+      <Link to="/feedback">Feedback</Link>
       </div>
     </nav>
   )

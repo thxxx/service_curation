@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import ResultCard from '../../tools/ResultCard'
 import ShowLanding from './ShowLanding'
 import { Card, Button, Row, Col } from "antd";
+import './LandingPage.scss'
 
 function LandingPage() {
     const [showType, setShowType] = useState("none")
@@ -70,37 +71,28 @@ function LandingPage() {
     }
 
 
-    (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })();
 
     
     const categoryTable = Categories.map((category, index) => {
         let bcolor;
 
-        options[category.toString()] ?  bcolor = "blue" : bcolor = "yellow"
+        options[category.toString()] ?  bcolor = "rgb(93, 216, 88)" : bcolor = "rgb(219, 255, 218)"
 
         return (
-            <Col key={index} lg={6} md={8} xs={24}>
-                <Button key={index} onClick={e => checkOptions(category)} style={{width: '100%', height: '100px', backgroundColor: `${bcolor}`}}>
+            // Col에 대해서 파악
+            <Col key={index} lg={5} md={10} xs={24} style={{margin:'10px'}}> 
+                <Button key={index} onClick={e => checkOptions(category)} style={{width: '80%', height: '100px', backgroundColor: `${bcolor}`}}>
                     {category}
                 </Button>
             </Col>
         )
     });
 
-    const showTypeform = () => {
-        if(showType === "none"){
-            setShowType("")
-            console.log(Categories)
-        }else{
-            setShowType("none")
-        }
-    };
-
     return (
         <>
         <div className="app">
         <ShowLanding />
-            <Row gutter={32, 16}>
+            <Row gutter={32, 16} style={{display:'inline-flex', justifyContent:'center', width:'100%'}}>
                     {categoryTable}
             </Row>
         </div>
@@ -108,14 +100,7 @@ function LandingPage() {
         <div style={{display:'flex', justifyContent:'center'}}>
         <ResultCard />
         </div>
-                    
-        <Button onClick={showTypeform}>{ showType==='none' ? "설문 조사 창 열기" : "설문조사 창 닫기"}</Button>
-        <span style={{display: showType, width:'80%' }} >
-            <div className="typeform-widget" 
-                data-url="https://form.typeform.com/to/Hw25d5Gh?typeform-medium=embed-snippet" 
-                style={{width: '100%', height: '500px' }}>
-            </div>
-        </span>
+            
 
         </>
     )

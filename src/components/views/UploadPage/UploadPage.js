@@ -14,8 +14,6 @@
 //     const [feature, setFeature] = useState('')
 //     const [category, setCategory] = useState('')
 
-//     const [loadingResult,]
-
 //     const onNameChange = (e) => {
 //         setName(e.currentTarget.value)
 //     }
@@ -119,16 +117,22 @@
 //     )
 // }
 
-import React from 'react'
-import { useState, useEffect } from 'react'
-import axios from 'axios';
-import { Form, Button } from 'antd';
-import { useSelector } from 'react-redux';
+import React, {useState} from 'react'
 
 function UploadPage() {
+    const [user, setUser] = useState("")
+
+    const submit = (e) => {
+        e.preventDefault();
+        localStorage.setItem("id", user)
+    }
+
     return (
         <div>
-            Login Page
+            <form onSubmit={submit}>
+                <input value={user} onChange={(e) => {setUser(e.currentTarget.value)}}></input>
+                <button onSubmit={submit}>버튼</button>
+            </form>
         </div>
     )
 }
