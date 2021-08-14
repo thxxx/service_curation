@@ -21,8 +21,6 @@ function LeftMenu(props) {
       </MenuItemGroup>
     </SubMenu>
     <Menu.Item key="upload">
-      <a href="/upload">Upload</a>
-      <Link to="all">Get All services</Link>
     </Menu.Item>
   </Menu>
   )
