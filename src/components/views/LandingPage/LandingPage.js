@@ -101,7 +101,6 @@ function LandingPage() {
         <ResultCard />
         </div>
             
-
         </>
     )
 }
