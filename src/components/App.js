@@ -18,7 +18,7 @@ function App() {
     <Suspense fallback={(<div>Loading...</div>)}>
         <Router>
           <NavBar />
-      <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
+      <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)', backgroundColor:"white" }}>
           <br/>
           <br/>
           <Route exact path="/" component={ LandingPage } />

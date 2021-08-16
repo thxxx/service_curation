@@ -2,8 +2,10 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import ResultCard from '../../tools/ResultCard'
 import ShowLanding from './ShowLanding'
-import { Card, Button, Row, Col } from "antd";
+import { Card, Row, Col } from "antd";
+import { Button } from '@material-ui/core'
 import './LandingPage.scss'
+import data from './ppc.json'
 
 function LandingPage() {
     const [showType, setShowType] = useState("none")
@@ -20,13 +22,28 @@ function LandingPage() {
         lifestyle:false,
         funny:false
     })
-    const [results, setResults] = useState([1,2,3]);
-    const [ResultLoad, setResultLoad] = useState(false);
+    const [results, setResults] = useState([{
+        title: "",
+                main:"",
+                desc:"",
+                icon_image:"",
+                app_link:"",
+                web_link:"",
+                nps:"",
+                useful:"",
+                recommend:"",
+                review1:"",
+                review2:"",
+                review3:"",
+                platform:"",
+    }]);
     const [Categories, setCategories] = useState(["disease","workout","tool","schoolStudy","saveMoney","scheduleMoney","selfImprovement","healing","hobby","lifestyle","funny"]);
+    const [visible, setVisible] = useState('none')
+    const [loading, setLoading] = useState('none')
 
     useEffect(() => {
-        console.log('Hello welcome!');
-    }, [])
+        console.log("tlwkr turfurhk", results.length)
+    }, [results])
     
 
     const checkOptions = (category) => {
@@ -70,9 +87,6 @@ function LandingPage() {
         console.log(`체크 했음 ${category}`);
     }
 
-
-
-    
     const categoryTable = Categories.map((category, index) => {
         let bcolor;
 
@@ -88,17 +102,65 @@ function LandingPage() {
         )
     });
 
+    const trySetResult = (option) => {    
+        let i = 1
+        const oneData = data[i]
+        
+        let body = 
+            {
+                title: oneData.A,
+                main:oneData.B,
+                desc:oneData.C,
+                icon_image:oneData.D,
+                app_link:oneData.E,
+                web_link:oneData.F,
+                nps:oneData.G,
+                useful:oneData.H,
+                recommend:oneData.I,
+                review1:oneData.J,
+                review2:oneData.K,
+                review3:oneData.L,
+                platform:oneData.M
+            }
+        setResults([...results, body])
+
+        console.log("결과", results)
+    }
+
+
+    const returnResult = () => {
+        console.log("결과 출력")
+        setLoading('flex')
+        setVisible('none')
+        trySetResult(options)
+        setTimeout(() => {
+            setVisible('flex')
+            setLoading('none')
+        }, 3000)
+    }
+
     return (
         <>
-        <div className="app">
+        <div className="app" style={{height: '1000%'}}>
         <ShowLanding />
             <Row gutter={32, 16} style={{display:'inline-flex', justifyContent:'center', width:'100%'}}>
                     {categoryTable}
             </Row>
         </div>
 
-        <div style={{display:'flex', justifyContent:'center'}}>
-        <ResultCard />
+        <div style={{display:'block', justifyContent:'center'}}>
+            <div style={{display:'flex', justifyContent:'center',width:'100%', margin:'8% 0%'}}>
+                <Button onClick={returnResult} className="resultButton" color="Secondary">결과 보기</Button>
+            </div>
+
+            <div style={{display:'inline-flex', justifyContent:'center', width:'100%'}}>
+                <div style={{display:loading}}>
+                    <p style={{fontSize:'3em'}}>로딩중...</p>
+                </div>
+                <div style={{display:visible}}>
+                    <ResultCard number={results.length-1} list={results}/>
+                </div>
+            </div>
         </div>
             
         </>

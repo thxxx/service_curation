@@ -17,7 +17,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ResultCard = (props) => {
+  console.log("props", props)
   const classes = useStyles();
+  let i = parseInt(props.number);
 
     return (
       <>
@@ -33,37 +35,17 @@ const ResultCard = (props) => {
             <div>
               <Button variant="outlined" endIcon={<InputIcon />}>웹으로 이동</Button>
             </div>
-            <p>{props.number}</p>
+            <p>2</p>
           </span>
           <span className="d_right">
             <div className="title">
-              <p> 챌린저스 </p>
+              <p> {props.list[i].title} </p>
             </div>
             <div className="oneline">
-              <p> 늘어진 생활패턴을 다시 바로 잡고 싶다면 무기력한 일상에 활력을 되찾고 싶다면 지금 챌린지를 시작하세요. </p>
+              <p> {props.list[i].main} </p>
             </div>
             <div className="description">
-              <p> ■ 200+개 이상의 챌린지
-일찍 일어나기, 운동, 영어 공부까지,
-스스로 지키고 싶은 약속이 있다면 도전하세요.
-원하는 챌린지가 없다면, 직접 만들 수도 있어요.
-<br />
-■ 평균 2주의 행동 중심 목표
-토익 만점이 아닌 하루 30분 공부하기처럼
-결과보다 행동 중심으로 설계된 챌린지!
-짧은 시간으로 부담없이 시작하고
-반복으로 좋은 습관을 쌓아나가요.
-<br />
-■ 나를 움직이는 강력한 알람, 돈!
-챌린지를 시작하기 전 참가비를 걸어두세요.
-시간이 지날 수록 약해지는 의지,
-시작할 때 돈을 걸어두면 끝까지 해내게 됩니다.
-<br />
-■ 성취감을 높이는 환급과 상금
-챌린지를 인증할 때마다 참가비를 돌려받아요.
-85% 이상 달성하면 참가비 100% 환급
-100% 달성하면 쏠쏠한 상금까지 추가로 획득!
-**85% 미만 달성 시 달성률만큼 참가비가 부분 환급됩니다 </p>
+              {props.list[i].desc}
             </div>
             <div className="infos">
               <span> 
@@ -71,7 +53,7 @@ const ResultCard = (props) => {
                   추천지수
                 </p>
                 <p className="info_desc">
-                  40 
+                  {props.list[i].nps} 
                 </p>
                 </span>
               <span>  
@@ -79,7 +61,7 @@ const ResultCard = (props) => {
                   유용함
                 </p>
                 <p className="info_desc">
-                  NPS
+                  {props.list[i].useful}
                 </p>
               </span>
               <span>
@@ -87,7 +69,7 @@ const ResultCard = (props) => {
                   어떤사람들에게 추천?
                 </p>
                 <p className="info_desc">
-                  NPS
+                  {props.list[i].recommend}
                 </p>
               </span>
             </div>
@@ -113,7 +95,7 @@ const ResultCard = (props) => {
                   </p>
                 </div>
                 <p>
-                  리뷰 1 내용
+                  {props.list[i].review1}
                 </p>
                 </span>
               <span className="rv">  
@@ -121,7 +103,7 @@ const ResultCard = (props) => {
                   리뷰 2 사용자 이름
                 </p>
                 <p>
-                  리뷰 2 내용
+                  {props.list[i].review2}
                 </p>
               </span>
               <span className="rv">
@@ -129,7 +111,7 @@ const ResultCard = (props) => {
                   리뷰 3 사용자 이름
                 </p>
                 <p>
-                  리뷰 3 내용
+                  {props.list[i].review3}
                 </p>
               </span>
             </AccordionDetails>
@@ -140,7 +122,7 @@ const ResultCard = (props) => {
             무료, 인앱결제
           </p>
           <p>
-            플랫폼 : 앱, 웹
+            플랫폼 : {props.list[i].platform}
           </p>
         </div>
       </div>

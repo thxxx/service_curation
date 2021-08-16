@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import LeftMenu from './Sections/LeftMenu';
 import RightMenu from './Sections/RightMenu';
-import {AppleOutlined} from '@ant-design/icons';
 import { Drawer, Button } from 'antd';
 import './Sections/Navbar.css';
 import { Link } from 'react-router-dom';
@@ -21,7 +20,7 @@ function NavBar() {
 
   
       <div className="menu__container">
-        <Drawer
+        {/* <Drawer
           title="Basic Drawer"
           placement="right"
           className="menu_drawer"
@@ -31,7 +30,7 @@ function NavBar() {
         >
           <LeftMenu mode="inline" />
           <RightMenu mode="inline" />
-        </Drawer>
+        </Drawer> */}
       <Link to="/upload">Upload</Link>
       <Link to="/all">Get All services</Link>
       <Link to="/feedback">Feedback</Link>
