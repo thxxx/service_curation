@@ -27,7 +27,7 @@ const ResultCard = (props) => {
         <div className="d_top">
           <span className="d_left">
             <div>
-              <img alt="ww" style={{width:150}} src="https://play-lh.googleusercontent.com/FNXV9IWrS7n2VMq1R_bRqWXQw-n69fkSxovQ-Wt6BiW7S3T8UuYfymZ4hTXanrhyaaQ=s360-rw" />
+              <img alt="icon" style={{width:150}} src="https://play-lh.googleusercontent.com/-BfPn7rqsvb40wz3suUZxDgk-AQ1CnZvqy4c37ws4dBoFXR2diX7sjKaS_pkBoxu5qQ=s180-rw" />
             </div>
             <div>
               <Button variant="outlined" endIcon={<InputIcon />}>앱으로 이동</Button>

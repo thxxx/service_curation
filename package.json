@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^12.1.10",
     "antd": "^4.16.10",
     "exceljs": "^4.2.1",
+    "file-saver": "^2.0.5",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.4",

@@ -1,16 +1,26 @@
 @import '~antd/dist/antd.css';
 
+@font-face {
+  font-family: 'font_HBS';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .menu {
   padding: 0 20px;
   border-bottom: solid 1px #e8e8e8;
   overflow: auto;
   /* box-shadow: 0 0 30px #f3f1f1; */
-  background-color: white;
+  background-color: rgb(201, 67, 67);
+  display:flex;
+  align-items: center;
 }
 
 .menu__logo {
   width: 150px;
   float: left;
+  font-family:font_HBS;
 }
 
 .menu__logo a {
@@ -60,6 +70,12 @@
 /* align header of Drawer with header of page */
 .menu_drawer .ant-drawer-header {
   padding: 14px 24px !important;
+}
+
+.navButton{
+  margin:10px;
+  color:white;
+  font-family:font_HBS;
 }
 
 @media (max-width: 767px) {

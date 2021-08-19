@@ -15,10 +15,8 @@ function NavBar() {
   return (
     <nav className="menu" style={{ position: 'fixed', zIndex: 5, width: '100%' }}>
       <div className="menu__logo">
-        <Link to="/">Logo</Link>
+        <Link to="/" style={{fontSize:'30px', color:'red'}}>SC</Link>
       </div>
-
-  
       <div className="menu__container">
         {/* <Drawer
           title="Basic Drawer"
@@ -31,9 +29,9 @@ function NavBar() {
           <LeftMenu mode="inline" />
           <RightMenu mode="inline" />
         </Drawer> */}
-      <Link to="/upload">Upload</Link>
-      <Link to="/all">Get All services</Link>
-      <Link to="/feedback">Feedback</Link>
+        <Link to="/upload" className="navButton">Upload</Link>
+        <Link to="/all" className="navButton">Get All services</Link>
+        <Link to="/feedback" className="navButton">Feedback</Link>
       </div>
     </nav>
   )

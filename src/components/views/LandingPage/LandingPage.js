@@ -2,10 +2,13 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import ResultCard from '../../tools/ResultCard'
 import ShowLanding from './ShowLanding'
-import { Card, Row, Col } from "antd";
+import { Card, Row, Col, Image } from "antd";
 import { Button } from '@material-ui/core'
 import './LandingPage.scss'
 import data from './ppc.json'
+import * as ExcelJS from "exceljs";
+import { saveAs } from "file-saver";
+
 
 function LandingPage() {
     const [showType, setShowType] = useState("none")
@@ -24,18 +27,18 @@ function LandingPage() {
     })
     const [results, setResults] = useState([{
         title: "",
-                main:"",
-                desc:"",
-                icon_image:"",
-                app_link:"",
-                web_link:"",
-                nps:"",
-                useful:"",
-                recommend:"",
-                review1:"",
-                review2:"",
-                review3:"",
-                platform:"",
+        main:"",
+        desc:"",
+        icon_image:"",
+        app_link:"",
+        web_link:"",
+        nps:"",
+        useful:"",
+        recommend:"",
+        review1:"",
+        review2:"",
+        review3:"",
+        platform:"",
     }]);
     const [Categories, setCategories] = useState(["disease","workout","tool","schoolStudy","saveMoney","scheduleMoney","selfImprovement","healing","hobby","lifestyle","funny"]);
     const [visible, setVisible] = useState('none')
@@ -102,8 +105,29 @@ function LandingPage() {
         )
     });
 
+    const handleExcel = async () => { 
+        // const workbook = new ExcelJS.Workbook(); 
+        // const worksheet = workbook.addWorksheet("My Sheet"); // sheet 이름이 My Sheet 
+        // // sheet 데이터 설정 
+        // worksheet.columns = [ 
+        //     { header: "Id", key: "id", width: 10 }, 
+        //     { header: "Name", key: "name", width: 32 }, 
+        //     { header: "D.O.B.", key: "DOB", width: 10, outlineLevel: 1 }, 
+        // ]; 
+        // worksheet.addRow({ id: 1, name: "John Doe", dob: new Date(1970, 1, 1) }); 
+        // worksheet.addRow({ id: 2, name: "Jane Doe", dob: new Date(1965, 1, 7) }); 
+        // // 다운로드 
+        // const mimeType = { 
+        //     type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" 
+        // }; 
+        // const buffer = await workbook.xlsx.writeBuffer(); 
+        // const blob = new Blob([buffer], mimeType); 
+        // saveAs(blob, "testExcel.xlsx"); 
+        console.log("ㅁㅁㅁ");
+    };
+
     const trySetResult = (option) => {    
-        let i = 1
+        let i = Math.floor(Math.random() *3) + 1
         const oneData = data[i]
         
         let body = 
@@ -127,17 +151,19 @@ function LandingPage() {
         console.log("결과", results)
     }
 
-
     const returnResult = () => {
         console.log("결과 출력")
+
         setLoading('flex')
         setVisible('none')
         trySetResult(options)
+        handleExcel()
         setTimeout(() => {
             setVisible('flex')
             setLoading('none')
-        }, 3000)
+        }, 1000)
     }
+
 
     return (
         <>
@@ -150,7 +176,7 @@ function LandingPage() {
 
         <div style={{display:'block', justifyContent:'center'}}>
             <div style={{display:'flex', justifyContent:'center',width:'100%', margin:'8% 0%'}}>
-                <Button onClick={returnResult} className="resultButton" color="Secondary">결과 보기</Button>
+                <Button onClick={returnResult} className="resultButton" color="secondary">결과 보기</Button>
             </div>
 
             <div style={{display:'inline-flex', justifyContent:'center', width:'100%'}}>
