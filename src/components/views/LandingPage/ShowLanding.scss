@@ -1,19 +1,108 @@
-.main_title{
-    width:100%;
-    font-size: 4em;
-    color:rgb(106, 253, 86);
 
+@font-face {
+    font-family: 'font_HBS';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}  
+
+.main_title{
+    display: block;
+    font-size: 43px;
+    color:rgb(34, 34, 34);
+    font-family: 'font_HBS';
 }
 
 .sub_desc{
-    font-size:2em;
-    color:rgb(106, 253, 86);
-
+    display: block; 
+    font-size:25px;
+    color:rgb(32, 32, 32);
+    font-family: 'font_HBS';
 }
 
 .container2{
-    display: block; 
+    width: 100%;
+    display: inline-flex; 
     align-items:center;
     justify-content: center;
-    padding-left:10%;
+    flex-direction: row;
+}
+
+.image{
+    width:800px;
+}
+
+.downButton{
+    background-color:black;
+    width:150px;
+    height:100;
+    border-radius:30px;
+    margin-top:70
+}
+
+.downArrow{
+    color:white;
+    font-size:3em;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    text-align:center;
+}
+
+@media (max-width: 767px) {
+    .downButton{
+        background-color:black;
+        width:100px;
+        height:70px;
+        border-radius:30px;
+        margin-top:70
+    }
+
+    .container2{
+        flex-direction: column;
+    }
+
+    .container3{
+        width:100%;
+        margin-top:50;
+        display:inline-block;
+        justify-content: 'center';
+        align-content: 'center';
+    }
+
+    .main_title{
+        width:100%;
+        // display: flex;
+        font-size: 30px;
+        color:rgb(34, 34, 34);
+        font-family: 'font_HBS';
+        justify-content: center;
+        align-items: center;
+        text-align:center;
+    }
+    .main_title_big{
+        width:100%;
+        // display: flex;
+        font-size: 60px;
+        color:rgb(121, 19, 19);
+        font-family: 'font_HBS';
+        justify-content: center;
+        align-items: center;
+        text-align:center;
+    }
+
+    .sub_desc{
+        width:100%;
+        // display: flex; 
+        font-size:15px;
+        color:rgb(32, 32, 32);
+        font-family: 'font_HBS';
+        justify-content: center;
+        align-items: center;
+        text-align:center;
+    }
+    .image{
+        width:500px;
+        margin-top:0px;
+    }
 }

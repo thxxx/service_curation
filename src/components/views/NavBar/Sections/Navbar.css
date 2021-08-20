@@ -74,11 +74,22 @@
 
 .navButton{
   margin:10px;
+  margin-left:30px;
   color:white;
   font-family:font_HBS;
+  font-size:15px;
 }
 
 @media (max-width: 767px) {
+  .navButton{
+    margin:10px;
+    color:white;
+    font-family:font_HBS;
+    font-size:15px;
+  }
+  .menu__container{
+    margin-left:-60px;
+  }
   .menu__mobile-button {
     display: inline-block !important;
   }

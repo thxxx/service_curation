@@ -35,7 +35,7 @@ const ResultCard = (props) => {
             <div>
               <Button variant="outlined" endIcon={<InputIcon />}>웹으로 이동</Button>
             </div>
-            <p>2</p>
+            {/* <p>2</p> */}
           </span>
           <span className="d_right">
             <div className="title">
@@ -89,9 +89,6 @@ const ResultCard = (props) => {
                 <div>
                   <p>
                     리뷰 1 사용자 이름
-                  </p>
-                  <p>
-                    리뷰 1 별점
                   </p>
                 </div>
                 <p>

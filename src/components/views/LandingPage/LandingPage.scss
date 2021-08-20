@@ -1,3 +1,67 @@
+
+@font-face {
+    font-family: 'font_HBS';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}  
+
 .app{
     height:300%
+}
+
+.resultButton{
+    background-color:blue;
+    width:300;
+    height:150;
+}
+.selectDescText{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+.selectText{
+    font-size:30px;
+    font-family: 'font_HBS';
+    text-align:center;
+    font-weight:'100';
+}
+.selectDescText2{
+    display:inline-flex;
+    margin-top: 10%;
+    margin-left:5%;
+    padding:10px;
+    background-color: rgba(99, 99, 99, 0.377);
+}
+.selectText2{
+    font-size:30px;
+    font-family: 'font_HBS';
+    text-align:center;
+    font-weight:'100';
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.showResultButton{
+    width:300px;
+    height:100px;
+    background-color:rgba(206, 56, 56, 0.801);
+    font-size:23px;
+}
+
+@media (max-width: 767px) {
+    .selectText{
+        font-size:15px;
+    }    
+    .selectText2{
+        font-size:18px;
+    }    
+    .showResultButton{
+        width:300px;
+        height:100px;
+        background-color:rgba(0, 0, 0, 0.801);
+        font-size:23px;
+    }
 }

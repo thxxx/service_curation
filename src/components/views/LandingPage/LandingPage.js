@@ -3,14 +3,82 @@ import { useState, useEffect } from 'react'
 import ResultCard from '../../tools/ResultCard'
 import ShowLanding from './ShowLanding'
 import { Card, Row, Col, Image } from "antd";
-import { Button } from '@material-ui/core'
 import './LandingPage.scss'
 import data from './ppc.json'
 import * as ExcelJS from "exceljs";
 import { saveAs } from "file-saver";
+import firebase from '../../../util/firebase'
+
+import { createTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import { green, purple, red } from '@material-ui/core/colors';
+
+const BootstrapButton = withStyles({
+  root: {
+    boxShadow: 'none',
+    textTransform: 'none',
+    fontSize: 16,
+    padding: '6px 12px',
+    border: '1px solid',
+    lineHeight: 1.5,
+    backgroundColor: '#0063cc',
+    borderColor: '#0063cc',
+    height:300,
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    '&:hover': {
+      backgroundColor: '#0069d9',
+      borderColor: '#0062cc',
+      boxShadow: 'none',
+    },
+    '&:active': {
+      boxShadow: 'none',
+      backgroundColor: '#0062cc',
+      borderColor: '#005cbf',
+    },
+    '&:focus': {
+      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+    },
+  },
+})(Button);
+
+const ColorButton = withStyles((theme) => ({
+  root: {
+    color: theme.palette.getContrastText(purple[500]),
+    backgroundColor: 'rgba(255,255,255,1)',
+    '&:hover': {
+      backgroundColor: red[700],
+    },
+  },
+}))(Button);
+
+const useStyles = makeStyles((theme) => ({
+  margin: {
+    margin: theme.spacing(1),
+    height:70,
+  },
+}));
+
+const theme = createTheme({
+  palette: {
+    primary: green,
+  },
+});
 
 
 function LandingPage() {
+    const selectionDataSave = firebase.database().ref("selectionData")
+
     const [showType, setShowType] = useState("none")
     const [options, setOptions] = useState({
         disease:false,
@@ -93,38 +161,20 @@ function LandingPage() {
     const categoryTable = Categories.map((category, index) => {
         let bcolor;
 
-        options[category.toString()] ?  bcolor = "rgb(93, 216, 88)" : bcolor = "rgb(219, 255, 218)"
+        options[category.toString()] ?  bcolor = "rgba(0,0,0,0.5)" : bcolor = "rgba(255,255,255,0.1)"
 
         return (
             // Col에 대해서 파악
-            <Col key={index} lg={5} md={10} xs={24} style={{margin:'10px'}}> 
-                <Button key={index} onClick={e => checkOptions(category)} style={{width: '80%', height: '100px', backgroundColor: `${bcolor}`}}>
+            <Col key={index} lg={5} md={10} xs={7} style={{margin:'10px'}}> 
+                <Button key={index} onClick={e => checkOptions(category)} style={{width: '80%', height: '100px', 
+                    backgroundColor: `${bcolor}`,
+                    border:"2px solid black"
+                }}>
                     {category}
                 </Button>
             </Col>
         )
     });
-
-    const handleExcel = async () => { 
-        // const workbook = new ExcelJS.Workbook(); 
-        // const worksheet = workbook.addWorksheet("My Sheet"); // sheet 이름이 My Sheet 
-        // // sheet 데이터 설정 
-        // worksheet.columns = [ 
-        //     { header: "Id", key: "id", width: 10 }, 
-        //     { header: "Name", key: "name", width: 32 }, 
-        //     { header: "D.O.B.", key: "DOB", width: 10, outlineLevel: 1 }, 
-        // ]; 
-        // worksheet.addRow({ id: 1, name: "John Doe", dob: new Date(1970, 1, 1) }); 
-        // worksheet.addRow({ id: 2, name: "Jane Doe", dob: new Date(1965, 1, 7) }); 
-        // // 다운로드 
-        // const mimeType = { 
-        //     type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" 
-        // }; 
-        // const buffer = await workbook.xlsx.writeBuffer(); 
-        // const blob = new Blob([buffer], mimeType); 
-        // saveAs(blob, "testExcel.xlsx"); 
-        console.log("ㅁㅁㅁ");
-    };
 
     const trySetResult = (option) => {    
         let i = Math.floor(Math.random() *3) + 1
@@ -157,33 +207,43 @@ function LandingPage() {
         setLoading('flex')
         setVisible('none')
         trySetResult(options)
-        handleExcel()
         setTimeout(() => {
             setVisible('flex')
             setLoading('none')
+            // selectionDataSave.push(options); // firebase에 options 데이터를 전송해서 저장하도록 한다.
         }, 1000)
     }
 
+    const classes = useStyles();
 
     return (
         <>
         <div className="app" style={{height: '1000%'}}>
         <ShowLanding />
-            <Row gutter={32, 16} style={{display:'inline-flex', justifyContent:'center', width:'100%'}}>
-                    {categoryTable}
-            </Row>
+        <hr style={{width: '80%', marginTop:100, border: '2px solid black'}}/>
+        <div className="selectDescText">
+            <p className="selectText">아래에서 본인에게 해당하는 사항을 전부 골라주세요. <br/>자세하게 선택할 수록 더 알맞은 서비스를 찾을 확률이 늘어납니다.</p>
+        </div>
+        <div className="selectDescText2">
+            <p className="selectText2">본인에게 필요한 종류의 도움은 무엇인가요?</p>
+        </div>
+        <Row gutter={32, 16} style={{display:'inline-flex', justifyContent:'center', alignItems:'center', width:'100%', marginTop:'0%'}}>
+                {categoryTable}
+        </Row>
         </div>
 
         <div style={{display:'block', justifyContent:'center'}}>
             <div style={{display:'flex', justifyContent:'center',width:'100%', margin:'8% 0%'}}>
-                <Button onClick={returnResult} className="resultButton" color="secondary">결과 보기</Button>
+                <ColorButton onClick={returnResult} variant="contained" color="primary" className={classes.margin}>
+                    Custom CSS
+                </ColorButton>
             </div>
 
             <div style={{display:'inline-flex', justifyContent:'center', width:'100%'}}>
                 <div style={{display:loading}}>
                     <p style={{fontSize:'3em'}}>로딩중...</p>
                 </div>
-                <div style={{display:visible}}>
+                <div style={{display:visible,display:'inline-flex', justifyContent:'center', }}>
                     <ResultCard number={results.length-1} list={results}/>
                 </div>
             </div>
