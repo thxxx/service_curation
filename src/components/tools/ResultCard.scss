@@ -1,11 +1,35 @@
+@import '~antd/dist/antd.css';
+
+@font-face {
+  font-family: 'font_HBS';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'payboocbold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'paybooclight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .container{
     width: 80%; 
     margin:10;
-    border: 1px solid rgb(253, 126, 126);
+    // border: 1px solid rgb(253, 126, 126);
     border-radius: 10px;
     div{
-        border:1px black solid
+        // border:1px black solid
     }
+    font-family: 'paybooclight';
 }
 .d_top{
     display:flex;
@@ -39,7 +63,7 @@
             justify-content: center;
             align-items: center;
             width:33%;
-            border: 1px solid green;
+            // border: 1px solid green;
             .info_title{
                 font-size:1.5em;
             }
@@ -80,14 +104,14 @@
         justify-content: center;
         align-items: center;
         width:33%;
-        border: 1px solid green;
+        // border: 1px solid green;
         padding:1%;
         div{
             display:inline-flex;
             p{
                 width: 50%;
                 margin-right: 5%;
-                border:1px solid black;
+                // border:1px solid black;
             }
         }
     }
@@ -143,7 +167,7 @@
                 justify-content: center;
                 align-items: center;
                 width:33%;
-                border: 1px solid green;
+                // border: 1px solid green;
                 .info_title{
                     font-size:1.5em;
                 }

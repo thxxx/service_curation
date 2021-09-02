@@ -12,6 +12,7 @@ import firebase from '../../../util/firebase'
 import { createTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { green, purple, red } from '@material-ui/core/colors';
+import question from '../../tools/questions'
 
 const BootstrapButton = withStyles({
   root: {
@@ -113,7 +114,7 @@ function LandingPage() {
     const [loading, setLoading] = useState('none')
 
     useEffect(() => {
-        console.log("tlwkr turfurhk", results.length)
+        console.log("tlwkr turfurhk", question)
     }, [results])
     
 
@@ -170,7 +171,7 @@ function LandingPage() {
                     backgroundColor: `${bcolor}`,
                     border:"2px solid black"
                 }}>
-                    {category}
+                    {question[category]}
                 </Button>
             </Col>
         )
@@ -221,34 +222,37 @@ function LandingPage() {
         <div className="app" style={{height: '1000%'}}>
         <ShowLanding />
         <hr style={{width: '80%', marginTop:100, border: '2px solid black'}}/>
-        <div className="selectDescText">
-            <p className="selectText">아래에서 본인에게 해당하는 사항을 전부 골라주세요. <br/>자세하게 선택할 수록 더 알맞은 서비스를 찾을 확률이 늘어납니다.</p>
-        </div>
-        <div className="selectDescText2">
-            <p className="selectText2">본인에게 필요한 종류의 도움은 무엇인가요?</p>
-        </div>
-        <Row gutter={32, 16} style={{display:'inline-flex', justifyContent:'center', alignItems:'center', width:'100%', marginTop:'0%'}}>
-                {categoryTable}
-        </Row>
-        </div>
-
-        <div style={{display:'block', justifyContent:'center'}}>
-            <div style={{display:'flex', justifyContent:'center',width:'100%', margin:'8% 0%'}}>
-                <ColorButton onClick={returnResult} variant="contained" color="primary" className={classes.margin}>
-                    Custom CSS
-                </ColorButton>
+        <div className="all_container">
+            <div className="all_container2">
+            <div className="selectDescText">
+                <p className="selectText">아래에서 본인에게 해당하는 사항을 전부 골라주세요. <br/>자세하게 선택할 수록 더 알맞은 서비스를 찾을 확률이 늘어납니다.</p>
             </div>
-
-            <div style={{display:'inline-flex', justifyContent:'center', width:'100%'}}>
-                <div style={{display:loading}}>
-                    <p style={{fontSize:'3em'}}>로딩중...</p>
-                </div>
-                <div style={{display:visible,display:'inline-flex', justifyContent:'center', }}>
-                    <ResultCard number={results.length-1} list={results}/>
-                </div>
+            <div className="selectDescText2">
+                <p className="selectText2">본인에게 필요한 종류의 도움은 무엇인가요?</p>
+            </div>
+            <Row gutter={32, 16} style={{display:'inline-flex', justifyContent:'center', alignItems:'center', width:'100%', marginTop:'0%'}}>
+                    {categoryTable}
+            </Row>
             </div>
         </div>
-            
+
+            <div style={{display:'block', justifyContent:'center'}}>
+                <div style={{display:'flex', justifyContent:'center',width:'100%', margin:'8% 0%'}}>
+                    <ColorButton onClick={returnResult} variant="contained" color="primary" className={classes.margin}>
+                        서비스 알아보기
+                    </ColorButton>
+                </div>
+
+                <div style={{display:'inline-flex', justifyContent:'center', width:'100%', marginBottom:'10%'}}>
+                    <div style={{display:loading}}>
+                        <p style={{fontSize:'3em'}}>로딩중...</p>
+                    </div>
+                    <div style={{display:visible, justifyContent:'center', }}>
+                        <ResultCard number={results.length-1} list={results}/>
+                    </div>
+                </div>
+            </div>
+        </div>
         </>
     )
 }

@@ -13,23 +13,28 @@
     font-family: 'font_HBS';
 }
 
-.sub_desc{
-    display: block; 
-    font-size:25px;
-    color:rgb(32, 32, 32);
-    font-family: 'font_HBS';
-}
-
 .container2{
     width: 100%;
     display: inline-flex; 
-    align-items:center;
-    justify-content: center;
     flex-direction: row;
+    padding-top:50px;
+}
+
+.container3{
+    margin-left:10%;
+    width:100%;
+    .sub_desc{
+        display: block; 
+        font-size:25px;
+        color:rgb(32, 32, 32);
+        width:700px;
+        font-family: 'font_HBS';
+    }    
 }
 
 .image{
-    width:800px;
+    width:600px;
+    margin-right:200px;
 }
 
 .downButton{
@@ -37,7 +42,7 @@
     width:150px;
     height:100;
     border-radius:30px;
-    margin-top:70
+    margin-top:70px;
 }
 
 .downArrow{

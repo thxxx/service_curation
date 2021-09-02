@@ -7,7 +7,18 @@
 }  
 
 .app{
-    height:300%
+    height:300%;
+    display:block;
+    justify-content: center;
+    align-items: center;
+}
+
+.all_container{
+    display:flex;
+    justify-content: center;
+}
+.all_container2{
+    width:80%;
 }
 
 .resultButton{
@@ -23,7 +34,7 @@
 }
 .selectText{
     font-size:30px;
-    font-family: 'font_HBS';
+    font-family: 'payboocbold';
     text-align:center;
     font-weight:'100';
 }
@@ -36,7 +47,7 @@
 }
 .selectText2{
     font-size:30px;
-    font-family: 'font_HBS';
+    font-family: 'payboocbold';
     text-align:center;
     font-weight:'100';
     display:flex;
