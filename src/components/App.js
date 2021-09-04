@@ -9,6 +9,7 @@ import UploadPage from "./views/UploadPage/UploadPage"
 import Footer from "./views/Footer/Footer"
 import AllServicePage from "./views/ServicesPage/AllServicePage"
 import Feedback from './views/Feedback/Feedback'
+import './App.scss'
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -19,7 +20,7 @@ function App() {
     <Suspense fallback={(<div>Loading...</div>)}>
         <Router>
           <NavBar />
-      <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)', backgroundColor:"#ffffff" }}>
+      <div className="Container" style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)', zIndex:-1 }}>
           <br/>
           <br/>
           <Route exact path="/" component={ LandingPage2 } />

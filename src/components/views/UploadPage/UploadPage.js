@@ -118,6 +118,7 @@
 // }
 
 import React, {useState} from 'react'
+import './UploadPage.scss'
 
 function UploadPage() {
     const [user, setUser] = useState("")
@@ -128,11 +129,13 @@ function UploadPage() {
     }
 
     return (
-        <div>
-            <form onSubmit={submit}>
-                <input value={user} onChange={(e) => {setUser(e.currentTarget.value)}}></input>
-                <button onSubmit={submit}>버튼</button>
-            </form>
+        <div className="uploadcontainer">
+            <span className="uploadIncontainer">
+                <form onSubmit={submit}>
+                    <input className="nameInput" value={user} onChange={(e) => {setUser(e.currentTarget.value)}}></input>
+                    <button className="inputButton" onSubmit={submit}>버튼</button>
+                </form>
+            </span>
         </div>
     )
 }

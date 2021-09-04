@@ -11,8 +11,9 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   heading: {
-    fontSize: theme.typography.pxToRem(15),
+    fontSize: theme.typography.pxToRem(18),
     fontWeight: theme.typography.fontWeightRegular,
+    color: 'white',
   },
   typography: {
     padding: theme.spacing(2),
@@ -43,13 +44,13 @@ const ResultCard = ({data}) => {
         <div className="d_top">
           <span className="d_left">
             <div>
-              <img alt="icon" style={{width:150}} src={data.Icon} />
+              <img alt="icon" style={{width:120}} src={data.Icon} />
             </div>
             <div className="move_button">
-              <Button variant="outlined" endIcon={<InputIcon />} href={"https://play.google.com/store/apps/details?id="+data.Package}>앱으로 이동</Button>
+              <a variant="outlined" endIcon={<InputIcon />} href={"https://play.google.com/store/apps/details?id="+data.Package}>앱으로 이동</a>
             </div>
             <div className="move_button">
-              <Button variant="outlined" endIcon={<InputIcon />} href={data.Website}>웹으로 이동</Button>
+              <a variant="outlined" endIcon={<InputIcon />} href={data.Website}>웹으로 이동</a>
             </div>
             {/* <p>2</p> */}
           </span>
@@ -61,22 +62,21 @@ const ResultCard = ({data}) => {
               <p> {data.Situation} </p>
             </div>
             <div className="description">
-              {data.Desc}
+              {/* {data.Desc} */}
             </div>
             <div className="infos">
               <span> 
-                <p className="info_title">
-                  추천지수
+                <p variant="contained" className="info_title">
+                  별점
                 </p>
                 <p className="info_desc">
                   {data.Rating} 
                 </p>
-                </span>
-              <span>  
-                <Button className="info_title" onClick={handleClick}>
-                  <p style={{width:100}}>유용함</p>
-                  <InputIcon />
-                </Button>
+              </span>
+              <span>
+                <p variant="contained" onClick={handleClick} className="info_title">
+                  유용함
+                </p>
                 <Popover
                   id={id}
                   open={open}
@@ -98,8 +98,8 @@ const ResultCard = ({data}) => {
                 </p>
               </span>
               <span>
-                <p className="info_title">
-                  어떤사람들에게 추천?
+                <p variant="contained" className="info_title">
+                  다운로드 수
                 </p>
                 <p className="info_desc">
                   {data.Download}
@@ -109,7 +109,7 @@ const ResultCard = ({data}) => {
           </span>
         </div>
         <div className="reviews">
-          <Accordion style={{width:'100%'}}>
+          <Accordion style={{width:'100%', backgroundColor:'rgba(199, 199, 199, 0.2)'}}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
@@ -147,10 +147,10 @@ const ResultCard = ({data}) => {
         </div>
         <div className="d_foot">
           <p>
-            무료, 인앱결제
+            # {data.Tag1}
           </p>
           <p>
-            플랫폼 : {data.Platform}
+            # {data.Tag2}
           </p>
         </div>
       </div>

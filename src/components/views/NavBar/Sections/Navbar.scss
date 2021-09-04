@@ -26,15 +26,18 @@
   position: fixed;
   /* box-shadow: 0 0 30px #f3f1f1; */
   width: 100%;
-  background-color: rgba(201, 67, 67, 1);
+  background-color: #A0FCD6;
   text-align: center;
   height:70px;
   flex-direction: row;
   padding-top:6px;
-  z-index:1;
+  z-index:12;
+  justify-content: space-between;
   .menu__logo{
   }
   .menu__container {
+    justify-content:flex-start;
+    margin-left:5%;
   }
 }
 

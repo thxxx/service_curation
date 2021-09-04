@@ -141,16 +141,28 @@ function LandingPage() {
     }, [results, type, situation])
 
     const typesTable = types.map((t, index) => {
+      let tbcolor = 'rgba(128, 196, 179, 0.801)'
+
+      if(t===type){
+        tbcolor = 'rgba(28, 96, 79, 0.801)'
+      }
+
         return (
-                <Button key={index} onClick={e => {e.preventDefault(); setType(t)}} className="typebuttons">
+                <Button key={index} style={{backgroundColor:`${tbcolor}`}} onClick={e => {e.preventDefault(); setType(t); setVisible('none');}} className="typebuttons">
                     {t}
                 </Button>
         )
     });
 
     const questionsTable = questions.map((q, index) => {
+      let qbcolor = 'rgba(156, 156, 156, 0.1)'
+
+      if(q===situation){
+        qbcolor = 'rgba(28, 96, 79, 0.801)'
+      }
+
         return (
-                <Button key={index} onClick={e => {e.preventDefault(); console.log(q); setSituation(q); setVisible('flex')}} className="questionButtons">
+                <Button key={index} style={{backgroundColor:`${qbcolor}`}} onClick={e => {e.preventDefault(); console.log(q); setSituation(q); setVisible('flex')}} className="questionButtons">
                     {q}
                 </Button>
         )
@@ -220,9 +232,9 @@ function LandingPage() {
                     {questionsTable}
                 </div>
                 <div style={{display:'flex', justifyContent:'center',width:'100%', margin:'8% 0%'}}>
-                    <ColorButton onClick={returnResult} variant="contained" color="primary" className={classes.margin}>
+                    {/* <ColorButton onClick={returnResult} variant="contained" color="primary" className={classes.margin}>
                         서비스 알아보기
-                    </ColorButton>
+                    </ColorButton> */}
                 </div>
 
                 <div style={{display:'inline-flex', justifyContent:'center', width:'100%', marginBottom:'10%'}}>

@@ -18,8 +18,12 @@ function NavBar() {
         <Link to="/" >SeCu</Link>
       </span>
       <span className="menu__container">
-        <Link to="/upload" className="navButton">추천하고 싶은 서비스 등록하기</Link>
-        <Link to="/all" className="navButton">서비스 모두 보기</Link>
+        <Link to="/upload" className="navButton">서비스 등록하기</Link>
+      </span>
+      <span className="menu__container">
+        <Link to="/all" className="navButton">모두 보기</Link>
+      </span>
+      <span className="menu__container">
         <Link to="/feedback" className="navButton">아이디어 제안하기</Link>
       </span>
     </nav>
