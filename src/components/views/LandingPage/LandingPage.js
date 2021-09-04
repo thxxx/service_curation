@@ -112,6 +112,7 @@ function LandingPage() {
     const [Categories, setCategories] = useState(["disease","workout","tool","schoolStudy","saveMoney","scheduleMoney","selfImprovement","healing","hobby","lifestyle","funny"]);
     const [visible, setVisible] = useState('none')
     const [loading, setLoading] = useState('none')
+    const [type, setType] = useState([''])
 
     useEffect(() => {
         console.log("tlwkr turfurhk", question)

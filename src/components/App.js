@@ -4,6 +4,7 @@ import {HashRouter as Router, Route} from "react-router-dom";
 // pages for this product
 import NavBar from "./views/NavBar/NavBar"
 import LandingPage from "./views/LandingPage/LandingPage.js"
+import LandingPage2 from "./views/LandingPage/LandingPage2.js"
 import UploadPage from "./views/UploadPage/UploadPage"
 import Footer from "./views/Footer/Footer"
 import AllServicePage from "./views/ServicesPage/AllServicePage"
@@ -18,10 +19,10 @@ function App() {
     <Suspense fallback={(<div>Loading...</div>)}>
         <Router>
           <NavBar />
-      <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)', backgroundColor:"#fff6e6" }}>
+      <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)', backgroundColor:"#ffffff" }}>
           <br/>
           <br/>
-          <Route exact path="/" component={ LandingPage } />
+          <Route exact path="/" component={ LandingPage2 } />
           <Route exact path="/upload" component={ UploadPage } />
           <Route exact path="/all" component={ AllServicePage } />
           <Route exact path="/feedback" component={ Feedback } />

@@ -15,43 +15,74 @@
 
 .container2{
     width: 100%;
-    display: inline-flex; 
     flex-direction: row;
     padding-top:50px;
+    display: flex;
+    justify-content:center;
 }
 
 .container3{
-    margin-left:10%;
-    width:100%;
-    .sub_desc{
-        display: block; 
-        font-size:25px;
-        color:rgb(32, 32, 32);
-        width:700px;
+    width:600px;
+    background-color:rgba(2, 151, 177, 0.2);
+    border-radius:7px;
+    justify-content: center;
+    display: block;
+    padding-bottom:30px;
+    padding-top:30px;
+    .main_title{
+        width:100%;
+        // display: flex;
+        font-size: 26px;
+        color:rgb(34, 34, 34);
+        justify-content: center;
+        align-items: center;
+        text-align:center;
+    }
+    .main_title_big{
+        width:100%;
+        // display: flex;
+        font-size: 50px;
+        color:rgb(121, 19, 19);
         font-family: 'font_HBS';
-    }    
+        justify-content: center;
+        align-items: center;
+        text-align:center;
+    }
+    .sub_desc{
+        font-size:16px;
+        color:rgb(32, 32, 32);
+        width:100%;
+        justify-content: center;
+        align-items: center;
+        text-align:center;
+    }  
+    .downButton{
+        background-color:black;
+        width:180px;
+        height:70px;
+        border-radius:40px;
+        margin-top:40px;
+        display: table;
+        align-items: center;
+        justify-content: center;
+    }  
+    .downDiv{
+        display: flex;
+        justify-content: center;
+    }
+    .downArrow{
+        display:table-cell;
+        vertical-align:middle;
+        text-align:center;
+        color:white;
+        font-size:1.3em;
+    }
+    
 }
 
 .image{
     width:600px;
     margin-right:200px;
-}
-
-.downButton{
-    background-color:black;
-    width:150px;
-    height:100;
-    border-radius:30px;
-    margin-top:70px;
-}
-
-.downArrow{
-    color:white;
-    font-size:3em;
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    text-align:center;
 }
 
 @media (max-width: 767px) {
@@ -61,18 +92,6 @@
         height:70px;
         border-radius:30px;
         margin-top:70
-    }
-
-    .container2{
-        flex-direction: column;
-    }
-
-    .container3{
-        width:100%;
-        margin-top:50;
-        display:inline-block;
-        justify-content: 'center';
-        align-content: 'center';
     }
 
     .main_title{

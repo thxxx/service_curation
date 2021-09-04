@@ -1,0 +1,72 @@
+@import '~antd/dist/antd.css';
+
+@font-face {
+  font-family: 'font_HBS';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'payboocbold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'paybooclight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.menu {
+  border-bottom: solid 2px #000000;
+  position: fixed;
+  /* box-shadow: 0 0 30px #f3f1f1; */
+  width: 100%;
+  background-color: rgba(201, 67, 67, 1);
+  text-align: center;
+  height:70px;
+  flex-direction: row;
+  padding-top:6px;
+  z-index:1;
+  .menu__logo{
+  }
+  .menu__container {
+  }
+}
+
+.menu__logo a {
+  display: inline-block;
+  font-size: 20px;
+  font-size:30px;
+  color:red;
+  font-family: 'font_HBS';
+}
+
+.menu__container a:hover{
+  color:rgb(105, 105, 105);
+}
+
+.menu__mobile-button {
+  float: right;
+  height: 32px;
+  padding: 6px;
+  margin-top: 8px;
+  display: none !important; /* use of important to overwrite ant-btn */
+  background: #d9dadb;
+}
+
+.navButton{
+  margin:0px;
+  margin-left:15px;
+  color:rgb(0, 0, 0);
+  font-family:'payboocbold';
+  font-size:15px;
+}
+
+@media (max-width: 767px) {
+
+}
