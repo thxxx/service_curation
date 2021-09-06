@@ -27,9 +27,9 @@ function App() {
           <Route exact path="/upload" component={ UploadPage } />
           <Route exact path="/all" component={ AllServicePage } />
           <Route exact path="/feedback" component={ Feedback } />
+      <Footer />
       </div>
         </Router>
-      <Footer />
     </Suspense>
   );
 }

@@ -60,7 +60,7 @@
         text-align:center;
     }  
     .downButton{
-        background-color:black;
+        background-color:rgb(173, 20, 115);
         width:180px;
         height:70px;
         border-radius:40px;
@@ -91,48 +91,42 @@
 @media (max-width: 700px) {
     .container3{
         width:95%;
+
+        .main_title_big{
+            width:100%;
+            // display: flex;
+            font-size: 40px;
+            font-family: 'font_HBS';
+            justify-content: center;
+            align-items: center;
+            text-align:center;
+        }
+
+        .main_title{
+            width:100%;
+            // display: flex;
+            font-size: 23px;
+            font-family: 'font_HBS';
+            justify-content: center;
+            align-items: center;
+            text-align:center;
+        }
+        .sub_desc{
+            width:100%;
+            // display: flex; 
+            font-size:17px;
+            font-family: 'font_HBS';
+            justify-content: center;
+            align-items: center;
+            text-align:center;
+            margin-top:20px;
+        }
     }
     .downButton{
-        background-color:black;
+        background-color:rgb(219, 26, 145);
         width:100px;
         height:70px;
         border-radius:30px;
         margin-top:70
-    }
-
-    .main_title{
-        width:100%;
-        // display: flex;
-        font-size: 30px;
-        color:rgb(34, 34, 34);
-        font-family: 'font_HBS';
-        justify-content: center;
-        align-items: center;
-        text-align:center;
-    }
-    .main_title_big{
-        width:100%;
-        // display: flex;
-        font-size: 60px;
-        color:rgb(121, 19, 19);
-        font-family: 'font_HBS';
-        justify-content: center;
-        align-items: center;
-        text-align:center;
-    }
-
-    .sub_desc{
-        width:100%;
-        // display: flex; 
-        font-size:15px;
-        color:rgb(32, 32, 32);
-        font-family: 'font_HBS';
-        justify-content: center;
-        align-items: center;
-        text-align:center;
-    }
-    .image{
-        width:500px;
-        margin-top:0px;
     }
 }

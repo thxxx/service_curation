@@ -59,7 +59,7 @@ const ResultCard = ({data}) => {
               <p> {data.Name} </p>
             </div>
             <div className="oneline">
-              <p> {data.Situation} </p>
+              <p> {data.Desc} </p>
             </div>
             <div className="description">
               {/* {data.Desc} */}

@@ -97,6 +97,30 @@
 @media (max-width: 767px) {
     .all_container2{
         width:100%;
+        text-align:center;
+        .typebuttons{
+            width: 21%;
+            height: 50px;
+            margin: 5px;
+            border-radius:0px;
+            color:white;
+        }
+    }
+    .questionWrapper{
+        display:inline-block;
+        justify-content: center;
+        text-align:center;
+        width:95%;
+        .questionButtons{
+            font-size:15px;
+            height:70px;
+            margin:10px;
+            padding:3px;
+            width:90%;
+            border:2px solid #A8D1E5;
+            color:white;
+            font-family: 'Pretendard-Regular';
+        }
     }
 
     .selectText{

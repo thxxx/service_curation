@@ -202,7 +202,7 @@ function LandingPage() {
         setTimeout(() => {
             setVisible('flex')
             setLoading('none')
-            // selectionDataSave.push(options); // firebase에 options 데이터를 전송해서 저장하도록 한다.
+            //selectionDataSave.push(options); // firebase에 options 데이터를 전송해서 저장하도록 한다.
         }, 1000)
     }
 
@@ -212,7 +212,7 @@ function LandingPage() {
         <>
         <div className="app" style={{height: '1000%'}}>
         <ShowLanding />
-        <hr style={{width:580, marginTop:20, border: '2px solid black'}}/>
+        <hr style={{width:'80%', marginTop:20, border: '2px solid black'}}/>
         <div className="all_container">
             <div className="all_container2">
                 <div className="selectDescText">

@@ -7,7 +7,7 @@ function Footer() {
             height: '80px', display: 'flex',
             flexDirection: 'column', alignItems: 'center',
             justifyContent: 'center', fontSize:'1rem',
-            backgroundColor: 'gray',
+            backgroundColor: 'gray', marginTop:'10%',
         }}>
            <p style={{ font:'white', }}> Happy Coding  <AppleOutlined /></p>
         </div>

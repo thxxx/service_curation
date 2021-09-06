@@ -72,4 +72,30 @@
 
 @media (max-width: 767px) {
 
+  .menu {
+    border-bottom: solid 2px #000000;
+    position: fixed;
+    /* box-shadow: 0 0 30px #f3f1f1; */
+    width: 100%;
+    background-color: #A0FCD6;
+    text-align: center;
+    height:70px;
+    flex-direction: row;
+    padding-top:6px;
+    z-index:12;
+    justify-content: space-between;
+    .menu__logo{
+    }
+    .menu__container {
+      justify-content:flex-start;
+      margin-left:0%;
+    }
+  }
+  .navButton{
+    margin:0px;
+    margin-left:5%;
+    color:rgb(0, 0, 0);
+    font-family:'payboocbold';
+    font-size:12px;
+  }
 }

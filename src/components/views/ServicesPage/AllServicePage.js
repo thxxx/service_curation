@@ -48,7 +48,9 @@ function AllServicePage() {
 
     const serviceReturn = services.map((s, index) => {
         return (
-            <ResultCard2 key={index} data={s} style={{margin:20}}/>
+            <div style={{marginTop:'5%', display: 'flex', justifyContent:'center'}}>
+                <ResultCard2 key={index} data={s} style={{margin:20}}/>
+            </div>
         )
     })
 

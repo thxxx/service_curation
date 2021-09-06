@@ -24,7 +24,7 @@ function ShowLanding() {
                 </div>
                 <div className="sub_desc">
                     <p>
-                        아래에서 본인에 해당하는 키워드를 선택한 후 제출을 누르시면 <br/>
+                        아래에서 본인에게 해당하는 상황을 고르면 <br/>
                         필요한 서비스를 찾아 드립니다.
                     </p>
                 </div>
