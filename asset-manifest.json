@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/service_curation/static/css/main.227d260e.chunk.css",
-    "main.js": "/service_curation/static/js/main.18ecf80d.chunk.js",
-    "main.js.map": "/service_curation/static/js/main.18ecf80d.chunk.js.map",
+    "main.css": "/service_curation/static/css/main.10198bf8.chunk.css",
+    "main.js": "/service_curation/static/js/main.048e4a6f.chunk.js",
+    "main.js.map": "/service_curation/static/js/main.048e4a6f.chunk.js.map",
     "runtime-main.js": "/service_curation/static/js/runtime-main.e5af0687.js",
     "runtime-main.js.map": "/service_curation/static/js/runtime-main.e5af0687.js.map",
     "static/css/2.98f05642.chunk.css": "/service_curation/static/css/2.98f05642.chunk.css",
@@ -12,14 +12,14 @@
     "static/js/3.71ab65b2.chunk.js.map": "/service_curation/static/js/3.71ab65b2.chunk.js.map",
     "index.html": "/service_curation/index.html",
     "static/css/2.98f05642.chunk.css.map": "/service_curation/static/css/2.98f05642.chunk.css.map",
-    "static/css/main.227d260e.chunk.css.map": "/service_curation/static/css/main.227d260e.chunk.css.map",
+    "static/css/main.10198bf8.chunk.css.map": "/service_curation/static/css/main.10198bf8.chunk.css.map",
     "static/js/2.4c73dcaf.chunk.js.LICENSE.txt": "/service_curation/static/js/2.4c73dcaf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e5af0687.js",
     "static/css/2.98f05642.chunk.css",
     "static/js/2.4c73dcaf.chunk.js",
-    "static/css/main.227d260e.chunk.css",
-    "static/js/main.18ecf80d.chunk.js"
+    "static/css/main.10198bf8.chunk.css",
+    "static/js/main.048e4a6f.chunk.js"
   ]
 }
